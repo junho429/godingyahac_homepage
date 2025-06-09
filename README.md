@@ -1,2 +1,2 @@
-# yahac_homepage
-야학의 홈페이지
+# SUPER AI
+한국어로 동작하는 간단한 규칙 기반 AI 데모 사이트입니다.
