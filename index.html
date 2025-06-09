@@ -5,33 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="beGU2j6zFbg6oF5t8xNpBFb0uT45RcaivhVt0Zn8550" />
-    <title>고딩야학 디스코드</title>
+    <title>SUPER AI 데모</title>
     <link rel="stylesheet" href="https://unpkg.com/mvp.css">
-    
+    <style>
+        body {
+            background-color: #0d0d0d;
+            color: #0ff;
+            font-family: 'Courier New', monospace;
+        }
+        header, main {
+            text-align: center;
+        }
+        #response {
+            margin-top: 1rem;
+            color: #fff;
+        }
+    </style>
+
 </head>
 <body>
     <header>
-        <h1>고딩야학</h1>
-        <p>고딩야학은 고등학생들이 모여 같이 공부를 할 수 있는 디스코드 커뮤니티입니다.</p>
-        <a href="#" onclick=""><strong>고딩야학 디스코드 들어가기</strong></a>
-        <p>디스코드 가입이 필요합니다, 계정이 없으시다면 이참에 가입 해보는건 어떨까요?</p>
-        <!--너굴맨은 투명 너굴맨이 처리했다구!-->
+        <h1>SUPER AI</h1>
+        <p>사이버펑크 분위기의 간단한 규칙 기반 AI 데모입니다.</p>
     </header>
-    <section>
-        <aside>
-            <h3>자신이 공부한 것을 공유하세요</h3>
-            <p>고딩야학 진도공유 채널에서 자신이 매일매일 공부한 것을 자랑해 보세요</p>
-        </aside>
-        <aside>
-            <h3>덜 외롭게 공부하세요</h3>
-            <p>혼자 공부하시느라 외로우시죠? 고딩야학 디스코드에서 함께 공부한다면 덜 외롭게 공부하실 수 있습니다.</p>
-        </aside>
-        <aside>
-            <h3>궁금한 점을 물어보세요</h3>
-            <p>막히는 부분이 생겼나요? 친구들에게 도움을 청하세요. 친절하게 도와줄 겁니다.</p>
-        </aside>
-    </section>
     <main>
-    </main>
+        <label for="user-input">질문을 입력하세요:</label>
+        <input id="user-input" type="text">
+        <button onclick="handleInput()">전송</button>
+        <p id="response"></p>
+</main>
+<script>
+    function getResponse(input) {
+        input = input.trim();
+        if (/안녕/.test(input)) return '안녕하세요, 저는 사이버펑크 AI, SUPER AI입니다.';
+        if (/이름/.test(input)) return '제 이름은 SUPER AI입니다.';
+        if (/도움/.test(input)) return '도움을 드리겠습니다.';
+        return '죄송합니다. 이해하지 못했습니다.';
+    }
+    function handleInput() {
+        const input = document.getElementById('user-input').value;
+        const output = getResponse(input);
+        document.getElementById('response').textContent = output;
+    }
+</script>
 </body>
 </html>
